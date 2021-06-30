@@ -11,6 +11,10 @@ const app = Express();
 app.use(cors());
 app.use(Express.json());
 
+app.get("/", (req, res) => {
+  res.send("Homepage");
+});
+
 app.post("/refresh", (req, res) => {
   const refreshToken = req.body.refreshToken
   const spotifyApi = new SpotifyWebApi({
