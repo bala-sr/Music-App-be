@@ -4,6 +4,7 @@ const cors = require("cors");
 const lyricsFinder = require("lyrics-finder");
 const SpotifyWebApi = require("spotify-web-api-node");
 
+const PORT = process.env.PORT || 4000;
 
 dotenv.config();
 const app = Express();
@@ -69,4 +70,4 @@ app.get("/lyrics", async (req, res) => {
   }
 });
 
-app.listen(4000, () => console.log("Server started at port", 4000));
+app.listen(PORT, () => console.log("Server started at port", PORT));
